@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pay Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Tax Calculator</h1>
+    <form id="taxCalculatorForm">
+      <div class="input-group">
+        <label>Pay Period:</label>
+        <div class="checkbox-group">
+          <label><input type="radio" name="periodType" value="month" checked>Month</label>
+          <label><input type="radio" name="periodType" value="year">Year</label>
+        </div>
+      </div>
+      <div class="input-group">
+        <label>Basic Salary:</label>
+        <div class="input-field">
+          <span class="currency">Ksh</span>
+          <input type="text" id="basicSalary" required>
+        </div>
+      </div>
+      <div class="input-group">
+        <label>Benefits (Bonus, Allowance):</label>
+        <div class="input-field">
+          <span class="currency">Ksh</span>
+          <input type="text" id="benefits" required>
+        </div>
+      </div>
+      <div class="input-group">
+        <label>Deduct NSSF:</label>
+        <div class="checkbox-group">
+          <label><input type="radio" name="deductNSSF" value="yes">Yes</label>
+          <label><input type="radio" name="deductNSSF" value="no" checked>No</label>
+        </div>
+      </div>
+      <div class="input-group">
+        <label>NSSF Rates:</label>
+        <div class="checkbox-group">
+          <label><input type="radio" name="nssfRates" value="new" checked>New NSSF Rates (Tiered)</label>
+          <label><input type="radio" name="nssfRates" value="old">Old NSSF Rates (Ksh 200)</label>
+        </div>
+      </div>
+      <div class="input-group">
+        <label>Deduct NHIF:</label>
+        <div class="checkbox-group">
+          <label><input type="radio" name="deductNHIF" value="yes">Yes</label>
+          <label><input type="radio" name="deductNHIF" value="no" checked>No</label>
+        </div>
+      </div>
+      <button type="submit" id="calculateBtn">Calculate</button>
+    </form>
+    <div id="results" class="hidden">
+      <div id="results"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
