@@ -112,13 +112,13 @@ function calculateResults() {
     deductNSSF === 'yes' ? (nssfRates === 'new' ? calculateNSSFContribution(annualIncome) : 200) : 0;
 
   // Personal relief
-  const personalRelief = periodType === 'month' ? 2700 : 28800;
+  const personalRelief = periodType === 'month' ? 2400 : 28800;
 
   let netSalary;
   if (periodType === 'month') {
-    netSalary = basicSalary + benefits - incomeTax / 12 - nhifContribution / 12 - nssfContribution / 12;
+    netSalary = basicSalary + benefits - incomeTax- nhifContribution  - nssfContribution + 2400;
   } else {
-    netSalary = basicSalary + benefits - incomeTax - nhifContribution - nssfContribution;
+    netSalary = basicSalary + benefits - incomeTax - nhifContribution - nssfContribution+ personalRelief + 28800;
   }
 
   // Display results
